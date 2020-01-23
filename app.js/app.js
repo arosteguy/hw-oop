@@ -155,20 +155,18 @@ async function start() {
 
     } 
 
-    // Reads main.html and places html in a variable
+    
     const mainHTML = fs.readFileSync("templates/main.html");
 
-    // Use eval to implement template literals in main.html and places teamHTML inside main template
     teamHTML = eval('`' + mainHTML + '`');
 
-    // write file to new team.html file
     fs.writeFile("output/team.html", teamHTML, function (err) {
 
         if (err) {
             return console.log(err);
         }
 
-        console.log("Success!");
+        // console.log();
 
     });
 
